@@ -72,7 +72,7 @@ const page = () => {
             <h1 className="text-stone-800 hover:text-stone-950 text-center text-5xl mb-10">
                 Like a friendly neighbor, cu_sail is here.
             </h1>
-            <div className="gap-6 items-center justify-center"> 
+            <div className="gap-6 items-center justify-center px-5"> 
                 <ContactCard
                     animation="fade-left"
                     title={time}
