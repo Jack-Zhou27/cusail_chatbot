@@ -11,7 +11,8 @@ const Carousel = (props) => {
         return () => {
             clearInterval(timerId);
         };
-    }, []);
+    }, [props.images.length]);
+    
     return (
         <> 
             <div className="relative h-[480px] w-[480px]">

@@ -15,16 +15,17 @@ const Page = () => {
   const autoScrollToBottom = useRef(null);
 
   const sendMessage = async (message) => {
-    try{
+    try {
       const response = await fetch('/api/chat', {
-        method:'POST',
+        method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({message}),
       });
 
       const data = await response.json();
       return data.response;
-    } catch (e) {
+    } catch (error) {
+      console.error('Chat error:', error);  //ESLint demands "error" to be used
       return 'Sorry, we are unable to process your request at the moment!';
     }
   };
@@ -72,7 +73,7 @@ const Page = () => {
         {showText && (
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
             <h1 className="text-4xl font-bold drop-shadow-md mb-4">
-              Hey, I'm your personal CU_Sail assistant!
+              Hey, I&apos;m your personal CU_Sail assistant!
             </h1>
             <Image
               src={earth}

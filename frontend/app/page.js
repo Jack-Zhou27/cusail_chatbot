@@ -2,7 +2,6 @@ import React from "react";
 import Image from "next/image";
 import Carousel from "@/components/Carousel";
 import Card from "@/components/Card";
-import earth from "@/public/assets/earth.gif";
 import stackedwaves from "@/public/assets/stackedwaves.svg";
 import leaves_left from "@/public/assets/leaves_left.png";
 import leaves_right from "@/public/assets/leaves_right.png";
@@ -14,10 +13,7 @@ import tree1 from "@/public/assets/tree1.jpeg";
 import insane from "@/public/assets/insane.png";
 import insane_left from "@/public/assets/insane_left.png";
 import leaves32 from "@/public/assets/leaves32.webp";
-import jack from "@/public/assets/jack.jpeg";
-import nikil from "@/public/assets/nikil.jpeg";
 import {faCoffee, faBook, faHeart, faLeaf} from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const page = () => {
   return (
