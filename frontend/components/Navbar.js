@@ -59,10 +59,10 @@ const Navbar = () => {
                     {/* logo */}
                     <Link 
                         href="/"
-                        className="flex items-center font-space font-extrabold text-white text-2xl hover:text-purple transition-colors ml-10 md:ml-20 mt-3"
+                        className="flex items-center font-space font-extrabold text-white text-2xl hover:text-purple transition-colors ml-10 md:ml-20 drop-shadow-md"
                     >
                         <Image src={logo} alt="logo" className="w-12 h-12 mr-4"/>
-                        Chatbot @ CU Sail
+                        chatbot @ cu_sail
                     </Link>
 
                     {/* Desktop Nav */}
@@ -91,23 +91,23 @@ const Navbar = () => {
                             <FontAwesomeIcon
                                 icon={isHamburgerOpen ? faClose : faBars}
                                 alt = "toggle"
-                                className="w-12 h-12 mt-3 mr-10"
+                                className="w-8 h-8 mr-10 drop-shadow-md"
                             />
                         </button>
 
                         {/* Mobile Nav*/}
                         {isHamburgerOpen && (
-                            <div className={`p-5 flex flex-col absolute top-full left-0 w-full ${isScrolled ? "bg-gradient-to-r from-blue-300 via-indigo-300 to-pink-300" : "bg-transparent"}`}>
+                            <div className={`pb-5 flex flex-col items-start px-28 absolute top-full left-0 w-full ${isScrolled ? "bg-gradient-to-r from-blue-300 via-indigo-300 to-pink-300" : "bg-transparent"}`}>
                                 <Link
                                     href="/chat"
-                                    className="text-white text-center text-2xl font-semibold font-space mr-5 md:mr-10 mt-3"
+                                    className="text-white text-xl font-semibold font-space mr-5 md:mr-10 mt-3"
                                 >
                                     Chat
                                 </Link>
         
                                 <Link
                                     href="/about"
-                                    className="text-white text-center text-2xl font-semibold font-space mr-10 md:mr-20 mt-3" 
+                                    className="text-white text-xl font-semibold font-space mr-10 md:mr-20 mt-3" 
                                 >
                                     About
                                 </Link>

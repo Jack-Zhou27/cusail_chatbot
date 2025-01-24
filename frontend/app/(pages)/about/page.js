@@ -13,18 +13,25 @@ import Image from 'next/image'
 import ContactCard from '../../../components/ContactCard'
 const page = () => {
 
+    const now = new Date();
+    const dayOfWeek = now.toLocaleDateString('en-US', {weekday: 'long'});
+    const currTime = now.toLocaleTimeString('en-US', {
+        hour: '2-digit',
+        minute: '2-digit',
+    });
+    const time = `Happy ${dayOfWeek}! It's currently ${currTime}`;
 
   return (
     <>
         <div 
-            className="h-screen pt-28"            
+            className="h-min-screen pt-28 pb-16"            
             style={{
                 backgroundImage: `url(${animatedBg.src})`,
                 backgroundSize: 'cover',        
                 backgroundRepeat: 'no-repeat', 
                 backgroundPosition: 'center',  
         }}> 
-            <h1 className="text-center text-5xl font-normal text-stone-800 hover:text-stone-900 pb-10"> about the chat team</h1>
+            <h1 className="text-center text-4xl md:text-5xl font-normal text-stone-800 hover:text-stone-900 pb-10"> about the chat team</h1>
             <div className="grid grid-cols-2 md:grid-cols-3 px-10 md:px-20 lg:px-40 gap-12" >
                 <TeamCard
                     image={sean}
@@ -68,18 +75,18 @@ const page = () => {
             <div className="gap-6 items-center justify-center"> 
                 <ContactCard
                     animation="fade-left"
+                    title={time}
+                    description="Need support? We&apos;re here for you. Allways."
+                />
+                <ContactCard
+                    animation="fade-right"
                     title="General Questions"
                     description="chat@cusail.edu"
                 />
                 <ContactCard
-                    animation="fade-right"
-                    title="Press Questions"
-                    description="chat@cusail.edu"
-                />
-                <ContactCard
                     animation="fade-left"
-                    title="Connect With Us in Person"
-                    description="chat@cusail.edu"
+                    title="Press Questions"
+                    description="press@cusail.edu"
                 />
             </div>
         </div>

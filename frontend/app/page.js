@@ -90,7 +90,7 @@ const page = () => {
 </div>
 
       {/* Image Gallery */}
-      <div className="h-screen bg-gradient-to-b from-customGreen to-customBlue">
+      <div className="h-min-screen bg-gradient-to-b from-customGreen to-customBlue">
         <h1 className="text-center drop-shadow-xl text-5xl font-bold pt-16 mb-8">Image Gallery</h1>
         <Image
           src={leaves_left}
@@ -102,7 +102,7 @@ const page = () => {
           alt="leaves right"
           className="hidden xl:block absolute right-0 object-cover z-10"
         />
-        <div className="flex items-center justify-center z-10">
+        <div className="flex items-center justify-center z-10 p-5">
           <Carousel images={[usa,tree1,leaves1,leaves2,leaves3]} />
         </div>
       </div>
@@ -117,13 +117,13 @@ const page = () => {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="absolute md:left-1/3 top-1/4 text-white text-9xl font-bold drop-shadow-xl">
+        <div className="absolute md:left-1/3 top-1/4 text-white hover:text-indigo-100 text-9xl font-bold drop-shadow-xl">
           Dive
         </div>
-        <div className="absolute md:right-1/3 top-2/4 text-white text-9xl font-bold drop-shadow-xl">
+        <div className="absolute md:right-1/3 top-2/4 text-white hover:text-indigo-100 text-9xl font-bold drop-shadow-xl">
           Right
         </div>
-        <div className="absolute md:left-1/3 top-3/4 text-white text-9xl font-bold drop-shadow-xl">
+        <div className="absolute md:left-1/3 top-3/4 text-white hover:text-indigo-100 text-9xl font-bold drop-shadow-xl">
           In
         </div>
       </div>
@@ -131,7 +131,7 @@ const page = () => {
       {/* button section */}
       <div className="w-full h-1/5 -pt-10 pb-16 flex items-center justify-center bg-deepBlue">
         <a href="/chat" className="block">
-          <button className="p-4 pr-8 pl-8 rounded-lg shadow-xl text-4xl bg-gradient-to-br from-orange-400 to-red-400 text-white">
+          <button className="p-4 pr-8 pl-8 rounded-lg shadow-xl text-4xl bg-gradient-to-br from-orange-400 to-red-400 hover:form-orange-500 hover:to-red-500 text-white">
             Chatbot @ CU Sail
           </button>
         </a>

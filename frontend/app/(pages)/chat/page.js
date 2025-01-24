@@ -102,13 +102,13 @@ const Page = () => {
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              className=" text-black bg-slate-100 font-semibold drop-shadow-md flex-1 p-2 border rounded-lg focus:outline-none focus:ring-4 focus:ring-purple-400"
+              className=" text-black text-sm bg-slate-100 font-light drop-shadow-md flex-1 p-2 border rounded-lg focus:outline-none focus:ring-4 focus:ring-purple-400"
               placeholder="Ask us anything, even your deepest, darkest secrets!"
             />
             <button
               type="submit"
               disabled={isLoading}
-              className="flex p-4 pl-8 pr-8 gap-2 items-center justify-center bg-gradient-to-br from-sky-300 to-orange-300 text-black text-4xl font-semibold drop-shadow-xl rounded-lg hover:from-sky-400 hover:to-orange-400 disabled:bg-slate-300"
+              className="flex p-4 pl-6 pr-6 gap-2 items-center justify-center bg-gradient-to-br from-sky-300 to-orange-300 text-black text-2xl md:text-3xl font-normal drop-shadow-xl rounded-lg hover:from-sky-400 hover:to-orange-400 disabled:bg-slate-300"
             >
               Send <FontAwesomeIcon icon={faArrowRight} className=""/>
             </button>
