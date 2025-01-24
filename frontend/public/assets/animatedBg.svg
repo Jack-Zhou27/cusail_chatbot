@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Gradient Background -->
+    <linearGradient id="dreamyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b3e5fc">
+        <animate attributeName="stop-color" values="#D1B8FF;#A5C6FF;#FFB6D9;#D1B8FF" dur="20s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="50%" stop-color="#f48fb1">
+        <animate attributeName="stop-color" values="#A5C6FF;#FFB6D9;#D1B8FF;#A5C6FF" dur="20s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#b3e5fc">
+        <animate attributeName="stop-color" values="#FFB6D9;#D1B8FF;#A5C6FF;#FFB6D9" dur="20s" repeatCount="indefinite" />
+      </stop>
+    </linearGradient>
+
+    <!-- Cloud Gradient -->
+    <linearGradient id="cloudGradient" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#e1bee7" />
+      <stop offset="100%" stop-color="#f3e5f5" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#dreamyGradient)" />
+
+  <!-- Clouds -->
+  <g>
+    <!-- Cloud 1 -->
+    <g fill="url(#cloudGradient)" transform-origin="center">
+      <circle cx="150" cy="250" r="40"/>
+      <circle cx="200" cy="240" r="45"/>
+      <circle cx="240" cy="255" r="50"/>
+      <circle cx="280" cy="245" r="48"/>
+      <circle cx="320" cy="260" r="42"/>
+    </g>
+    <animateTransform attributeName="transform" type="translate"
+      values="0 0; 600 100; 0 0" dur="30s" repeatCount="indefinite" />
+
+    <!-- Cloud 2 -->
+    <g fill="url(#cloudGradient)" transform-origin="center">
+      <circle cx="600" cy="100" r="40"/>
+      <circle cx="640" cy="115" r="45"/>
+      <circle cx="680" cy="100" r="50"/>
+      <circle cx="720" cy="110" r="48"/>
+      <circle cx="760" cy="105" r="44"/>
+    </g>
+    <animateTransform attributeName="transform" type="translate"
+      values="0 0; -600 0; 0 0" dur="40s" repeatCount="indefinite" />
+
+    <!-- Cloud 3 -->
+    <g fill="url(#cloudGradient)" transform-origin="center">
+      <circle cx="300" cy="320" r="50"/>
+      <circle cx="340" cy="315" r="55"/>
+      <circle cx="380" cy="330" r="50"/>
+      <circle cx="420" cy="310" r="45"/>
+      <circle cx="460" cy="325" r="48"/>
+      <circle cx="500" cy="315" r="42"/>
+    </g>
+    <animateTransform attributeName="transform" type="translate"
+      values="200 0; -600 0; 200 0" dur="35s" repeatCount="indefinite" />
+
+    <!-- Cloud 4 -->
+    <g fill="url(#cloudGradient)" transform-origin="center">
+      <circle cx="800" cy="180" r="35"/>
+      <circle cx="840" cy="175" r="40"/>
+      <circle cx="880" cy="190" r="45"/>
+      <circle cx="920" cy="180" r="42"/>
+      <circle cx="960" cy="185" r="38"/>
+    </g>
+    <animateTransform attributeName="transform" type="translate"
+      values="500 0; -500 0; 500 0" dur="45s" repeatCount="indefinite" />
+  </g>
+</svg>

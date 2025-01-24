@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" viewBox="0 0 960 500" preserveAspectRatio="none">
+  <defs>
+    <!-- Darker pastel background gradient -->
+    <linearGradient id="backgroundGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#B8D8FF"> <!-- Darker baby blue -->
+        <animate attributeName="stop-color" 
+          values="#B8D8FF;#FFD6E6;#FFD6CC;#B8D8FF"
+          dur="10s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="50%" stop-color="#FFD6E6"> <!-- Darker pink -->
+        <animate attributeName="stop-color"
+          values="#FFD6E6;#FFD6CC;#B8D8FF;#FFD6E6"
+          dur="10s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#FFD6CC"> <!-- Darker peach -->
+        <animate attributeName="stop-color"
+          values="#FFD6CC;#B8D8FF;#FFD6E6;#FFD6CC"
+          dur="10s" repeatCount="indefinite" />
+      </stop>
+    </linearGradient>
+
+    <!-- Bubble gradients -->
+    <radialGradient id="bubbleGradient1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(196, 218, 243, 0.85)" /> <!-- Soft blue -->
+      <stop offset="100%" stop-color="rgba(164, 207, 255, 0)" />
+    </radialGradient>
+    <radialGradient id="bubbleGradient2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(245, 199, 205, 0.85)" /> <!-- Soft pink -->
+      <stop offset="100%" stop-color="rgba(255, 182, 193, 0)" />
+    </radialGradient>
+    <radialGradient id="bubbleGradient3" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(255, 218, 185, 0.85)" /> <!-- Soft peach -->
+      <stop offset="100%" stop-color="rgba(255, 218, 185, 0)" />
+    </radialGradient>
+  </defs>
+
+  <!-- Animated background -->
+  <rect width="100%" height="100%" fill="url(#backgroundGradient)" />
+
+  <!-- Dynamic morphing shapes -->
+  <g class="bubbles">
+    <!-- Blue morphing bubble -->
+    <path class="bubble bubble1" fill="url(#bubbleGradient1)">
+      <animate attributeName="d" dur="6s" repeatCount="indefinite" 
+        values="M200,150 Q270,120 350,150 T500,200 Q470,300 400,350 T250,300 Q180,220 200,150;
+                M180,180 Q300,100 380,160 T520,180 Q450,320 380,330 T230,280 Q160,200 180,180;
+                M200,150 Q270,120 350,150 T500,200 Q470,300 400,350 T250,300 Q180,220 200,150"
+        calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+    </path>
+
+    <!-- Pink morphing bubble -->
+    <path class="bubble bubble2" fill="url(#bubbleGradient2)">
+      <animate attributeName="d" dur="7s" repeatCount="indefinite" 
+        values="M600,200 Q650,150 750,180 T850,280 Q820,360 750,380 T650,320 Q580,250 600,200;
+                M580,220 Q670,130 770,160 T870,260 Q800,380 730,360 T630,300 Q560,270 580,220;
+                M600,200 Q650,150 750,180 T850,280 Q820,360 750,380 T650,320 Q580,250 600,200"
+        calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+    </path>
+
+    <!-- Peach morphing bubble -->
+    <path class="bubble bubble3" fill="url(#bubbleGradient3)">
+      <animate attributeName="d" dur="5s" repeatCount="indefinite" 
+        values="M300,400 Q350,370 450,400 T550,480 Q520,550 450,550 T350,500 Q280,440 300,400;
+                M280,420 Q370,350 470,380 T570,460 Q500,570 430,530 T330,480 Q260,420 280,420;
+                M300,400 Q350,370 450,400 T550,480 Q520,550 450,550 T350,500 Q280,440 300,400"
+        calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+    </path>
+  </g>
+
+  <style>
+    .bubbles {
+      filter: blur(10px);
+      animation: overallFloat 8s ease-in-out infinite;
+    }
+
+    @keyframes overallFloat {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      25% { transform: translate(20px, -20px) rotate(2deg); }
+      50% { transform: translate(-15px, 15px) rotate(-2deg); }
+      75% { transform: translate(-20px, -15px) rotate(1deg); }
+    }
+
+    .bubble {
+      mix-blend-mode: screen;
+    }
+
+    .bubble1 {
+      animation: float1 4s ease-in-out infinite;
+    }
+
+    .bubble2 {
+      animation: float2 5s ease-in-out infinite;
+    }
+
+    .bubble3 {
+      animation: float3 6s ease-in-out infinite;
+    }
+
+    @keyframes float1 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(-30px, -25px) scale(1.1); }
+      66% { transform: translate(25px, -30px) scale(0.9); }
+    }
+
+    @keyframes float2 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(35px, -30px) scale(0.9); }
+      66% { transform: translate(-25px, -35px) scale(1.1); }
+    }
+
+    @keyframes float3 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(-25px, 30px) scale(1.1); }
+      66% { transform: translate(30px, 25px) scale(0.9); }
+    }
+  </style>
+</svg>
