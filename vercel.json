@@ -20,7 +20,4 @@
       "dest": "frontend/$1"
     }
   ],
-  "includeFiles": [
-    "backend/data/**/*.md"
-  ]
 }
