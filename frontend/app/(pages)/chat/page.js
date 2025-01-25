@@ -1,25 +1,25 @@
 "use client"
-import React, {useState, useEffect, useRef} from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import ChatMessage from '../../../components/ChatMessage'
 import Image from 'next/image'
 import earth from '@/public/assets/earth.gif'
-import {faArrowRight} from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import clouds from '@/public/assets/clouds.svg';
 
 const Page = () => {
-  const[messages, setMessages] = useState([]);
-  const[input, setInput] = useState('');
-  const[showText, setShowText] = useState(true);
-  const[isLoading, setIsLoading] = useState(false);
+  const [messages, setMessages] = useState([]);
+  const [input, setInput] = useState('');
+  const [showText, setShowText] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const autoScrollToBottom = useRef(null);
 
   const sendMessage = async (message) => {
     try {
       const response = await fetch('/api/chat', {
         method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({message}),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message }),
       });
 
       const data = await response.json();
@@ -29,31 +29,31 @@ const Page = () => {
       return 'Sorry, we are unable to process your request at the moment!';
     }
   };
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const message = input.trim();
     // Stop empty messages
-    if(!message){
+    if (!message) {
       return;
     }
 
     // Add user message using 'input'
-    setMessages((prev) => [...prev, {text: message, isUser:true}]);
+    setMessages((prev) => [...prev, { text: message, isUser: true }]);
     setInput('');
     setIsLoading(true);
     setShowText(false);
-  
+
     // Get chat response
     const response = await sendMessage(message);
-    setMessages(prev => [...prev, {text: response, isUser:false}]);
+    setMessages(prev => [...prev, { text: response, isUser: false }]);
     setIsLoading(false);
   };
 
   //autoscroll to bottom of chat history
   useEffect(() => {
     const container = autoScrollToBottom.current;
-    if(container){
+    if (container) {
       container.scrollTop = container.scrollHeight;
     }
   }, [messages])
@@ -83,13 +83,13 @@ const Page = () => {
           </div>
         )}
 
-        {/* Chat */}  
+        {/* Chat */}
         <div
           ref={autoScrollToBottom}
           className="flex-1 overflow-y-auto p-6 mt-28 mx-2 md:mx-10 lg:mx-20"
         >
-          {messages.map((message,index) => (
-            <ChatMessage key={index} message={message}/>
+          {messages.map((message, index) => (
+            <ChatMessage key={index} message={message} />
           ))}
           {isLoading && (
             <div className="text-black animate-pulse">Thinking... </div>
@@ -110,7 +110,7 @@ const Page = () => {
               disabled={isLoading}
               className="flex p-4 pl-6 pr-6 gap-2 items-center justify-center bg-gradient-to-br from-sky-300 to-orange-300 text-black text-2xl md:text-3xl font-normal drop-shadow-xl rounded-lg hover:from-sky-400 hover:to-orange-400 disabled:bg-slate-300"
             >
-              Send <FontAwesomeIcon icon={faArrowRight} className=""/>
+              Send <FontAwesomeIcon icon={faArrowRight} className="" />
             </button>
           </form>
         </div>
