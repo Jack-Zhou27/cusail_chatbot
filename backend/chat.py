@@ -6,19 +6,34 @@ class Chat:
     genai.configure(api_key = os.getenv('GEMINI_API_KEY'))
     model = genai.GenerativeModel('gemini-pro')
 
+    # @classmethod
+    # def load_context(cls):
+    #     context = []
+    #     for file_path in glob.glob('data/*.md'):
+    #         try:
+    #             with open(file_path, 'r', encoding='utf-8') as file:
+    #                 context.append(file.read())
+    #         except Exception as e:
+    #             print(f"Error reading file {file_path}: {e}")
+        
+    #     # Join context or return a default message if no files found
+    #     return ' '.join(context) if context else "No markdown files found in the data directory."
+
     @classmethod
     def load_context(cls):
         context = []
-        for file_path in glob.glob('data/*.md'):
+        # Use os.path.join to create an absolute path
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        data_dir = os.path.join(current_dir, 'data')
+        
+        for file_path in glob.glob(os.path.join(data_dir, '*.md')):
             try:
                 with open(file_path, 'r', encoding='utf-8') as file:
                     context.append(file.read())
             except Exception as e:
                 print(f"Error reading file {file_path}: {e}")
         
-        # Join context or return a default message if no files found
         return ' '.join(context) if context else "No markdown files found in the data directory."
-    
         
 
     @classmethod
