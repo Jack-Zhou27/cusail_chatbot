@@ -1,6 +1,6 @@
 from flask import request, jsonify
-from config import app
-from chat import Chat
+from .config import app
+from .chat import Chat
 
 @app.route('/api/chat', methods=['POST'])
 def chat():
