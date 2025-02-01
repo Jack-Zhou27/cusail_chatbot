@@ -68,13 +68,13 @@ def qdrant_client():
     cusail_documents = load_data()
     embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
     url = 'http://localhost:6333'
-    return Qdrant.from_documents(
-        documents=cusail_documents,
-        embedding=embeddings,
-        url=url,
-        collection_name="cusail_chatbot",
+    qdrant = Qdrant.from_documents(
+        cusail_documents,
+        embeddings,
+        path="/tmp/local_qdrant",
+        collection_name="my_documents",
     )
-
+    return qdrant
 
 def custom_prompt(client, query: str):
     results = client.similarity_search(query, k=3)
