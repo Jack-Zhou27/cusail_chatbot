@@ -29,14 +29,19 @@ const page = () => {
           alt="leaves right"
           className="hidden xl:block absolute top-1/3 left-0 object-cover opacity-5 lg:opacity-95 z-0"
         />
-<div className="relative z-10 items-center justify-center">
-  <h1 className="xl:text-center font-outline-white-1 md:font-outline-1 drop-shadow-xl text-6xl ml-2 md:ml-16 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-black to-black md:from-violet-700 md:to-orange-600">
+<div className="relative z-10 flex flex-col items-center justify-center text-center">
+  <h1 className="font-outline-white-1 md:font-outline-1 drop-shadow-xl text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-black to-black md:from-violet-700 md:to-orange-600">
     Learn with AI powered insights.
   </h1>
-  <p className="xl:w-1/4 mt-4 text-4xl ml-2 md:ml-16 font-extraold drop-shadow-xl text-white text-left xl:text-center xl:mx-auto">
+  <p className="xl:w-1/4 mt-4 text-4xl font-extrabold drop-shadow-xl text-white">
     Embrace the next generation of personalized and intelligent learning.
   </p>
+  <button className="mt-6 px-5 p-4 pr-8 pl-8 rounded-lg shadow-xl text-4xl bg-gradient-to-br from-indigo-400 to-blue-800 hover:from-indigo-500 hover:to-blue-500 text-white">
+    Chatbot @ CU Sail
+  </button>
 </div>
+
+
 
         {/* <div className="flex justify-center items-center">
           <Image
