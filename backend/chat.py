@@ -80,7 +80,9 @@ def custom_prompt(client, query: str):
     results = client.similarity_search(query, k=3)
     source_knowledge = "\n".join([x.page_content for x in results])
     augment_prompt = f"""You are a helpful, polite, and kind general-purpose assistant with knowledge about Cornell's Project Team: CU Sail.
-            Use this context to answer user questions about CU Sail. If you do not know the answer, please apologize and say so. Use the contexts below to answer the query:
+            The context given to you should only serve to supplement your answer. If you don't know the answer, generate an appropriate response to the user based on your 
+            general knowledge instead. 
+            Allways provide an answer to the user, whether it is based on your knowledge or the context provided below.
 
     Contexts:
     {source_knowledge}
