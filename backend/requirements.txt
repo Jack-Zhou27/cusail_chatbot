@@ -5,8 +5,7 @@ requests==2.31.0
 python-dotenv==1.0.0
 google-generativeai==0.3.1
 markdown==3.5.2
-psycopg2-binary==2.9.10
-supabase==2.11.0s
+supabase==2.11.0
 langchain==0.3.10
 langchain-community==0.3.9
 langchain-core==0.3.22
